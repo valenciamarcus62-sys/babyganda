@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Baby Ganda 💙</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0c1e3d, #1a3b70, #2e6bc4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Hearts */
+        .heart {
+            position: absolute;
+            width: 28px; height: 28px;
+            background: #6ab7ff;
+            transform: rotate(-45deg);
+            animation: floatUp 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+        .heart::before, .heart::after {
+            content: ''; position: absolute;
+            width: 28px; height: 28px;
+            background: #6ab7ff; border-radius: 50%;
+        }
+        .heart::before { top: -14px; left: 0; }
+        .heart::after { top: 0; left: 14px; }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(-45deg); opacity: 0; }
+            20% { opacity: 0.6; }
+            100% { transform: translateY(-50px) rotate(-45deg); opacity: 0; }
+        }
+
+        /* FLOWERS */
+        .flower {
+            position: absolute;
+            pointer-events: none;
+            animation: fallFlower 8s ease-in-out infinite;
+            opacity: 0.9;
+            filter: drop-shadow(0 0 6px rgba(130, 180, 255, 0.4));
+        }
+        @keyframes fallFlower {
+            0% { transform: translateY(-60px) rotate(0deg); opacity: 0; }
+            15% { opacity: 0.95; }
+            100% { transform: translateY(100vh) rotate(405deg); opacity: 0; }
+        }
+
+        /* Blue Rose */
+        .flower.rose { width: 50px; height: 50px; }
+        .flower.rose .petal {
+            position: absolute; background: linear-gradient(135deg, #3a80e8, #1e5fc9);
+            border-radius: 50% 50% 50% 0; transform-origin: bottom right;
+        }
+        .flower.rose .p1 { width: 24px; height: 24px; transform: rotate(0deg); top: 6px; left: 6px; }
+        .flower.rose .p2 { width: 24px; height: 24px; transform: rotate(45deg); top: 6px; left: 6px; }
+        .flower.rose .p3 { width: 24px; height: 24px; transform: rotate(90deg); top: 6px; left: 6px; }
+        .flower.rose .p4 { width: 24px; height: 24px; transform: rotate(135deg); top: 6px; left: 6px; }
+        .flower.rose .p5 { width: 18px; height: 18px; background: #5a9cf5; border-radius: 50%; top: 16px; left: 16px; }
+        .flower.rose .center {
+            position: absolute; width: 10px; height: 10px;
+            background: #b8d8ff; border-radius: 50%; top: 20px; left: 20px;
+        }
+
+        /* Hydrangea */
+        .flower.hydrangea { width: 52px; height: 52px; }
+        .flower.hydrangea .petal {
+            position: absolute; width: 18px; height: 14px;
+            background: linear-gradient(135deg, #73a9f5, #5490e8); border-radius: 50%;
+        }
+        .flower.hydrangea .p1 { top: 4px; left: 17px; }
+        .flower.hydrangea .p2 { top: 14px; left: 4px; }
+        .flower.hydrangea .p3 { top: 14px; left: 30px; }
+        .flower.hydrangea .p4 { top: 28px; left: 17px; }
+        .flower.hydrangea .p5 { top: 18px; left: 17px; background: #96c0ff; }
+
+        /* Cornflower */
+        .flower.cornflower { width: 46px; height: 46px; }
+        .flower.cornflower .petal {
+            position: absolute; width: 12px; height: 22px;
+            background: linear-gradient(to top, #5a9cf5, #96c8ff);
+            border-radius: 50%; left: 17px; transform-origin: center bottom;
+        }
+        .flower.cornflower .p1 { transform: rotate(0deg); }
+        .flower.cornflower .p2 { transform: rotate(45deg); }
+        .flower.cornflower .p3 { transform: rotate(90deg); }
+        .flower.cornflower .p4 { transform: rotate(135deg); }
+        .flower.cornflower .p5 { transform: rotate(180deg); }
+        .flower.cornflower .p6 { transform: rotate(225deg); }
+        .flower.cornflower .p7 { transform: rotate(270deg); }
+        .flower.cornflower .p8 { transform: rotate(315deg); }
+        .flower.cornflower .center {
+            position: absolute; width: 12px; height: 12px;
+            background: #2554a0; border-radius: 50%; top: 17px; left: 17px;
+        }
+
+        /* Forget-me-not */
+        .flower.forget { width: 40px; height: 40px; }
+        .flower.forget .petal {
+            position: absolute; width: 13px; height: 18px;
+            background: linear-gradient(to top, #87bfff, #b8d8ff); border-radius: 50%;
+        }
+        .flower.forget .p1 { top: 0; left: 13px; }
+        .flower.forget .p2 { top: 8px; left: 0; }
+        .flower.forget .p3 { top: 8px; left: 23px; }
+        .flower.forget .p4 { top: 20px; left: 5px; }
+        .flower.forget .p5 { top: 20px; left: 21px; }
+        .flower.forget .center {
+            position: absolute; width: 10px; height: 10px;
+            background: #ffd700; border-radius: 50%; top: 15px; left: 15px;
+            box-shadow: 0 0 4px rgba(255, 215, 0, 0.6);
+        }
+
+        /* Bellflower */
+        .flower.bell { width: 44px; height: 56px; }
+        .flower.bell .bloom {
+            position: absolute; width: 32px; height: 42px;
+            background: linear-gradient(to bottom, #5490e8, #3a7bd5);
+            border-radius: 50% 50% 50% 50% / 65% 65% 35% 35%;
+            top: 0; left: 6px;
+        }
+        .flower.bell .bloom::after {
+            content: ''; position: absolute; bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 18px; height: 10px;
+            background: #2e6bc4; border-radius: 50%;
+        }
+        .flower.bell .stem {
+            position: absolute; width: 4px; height: 14px;
+            background: #3a7bd5; bottom: 0; left: 20px; border-radius: 2px;
+        }
+
+        /* CARD */
+        .container {
+            text-align: center; z-index: 10;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 35px 45px; border-radius: 24px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0, 80, 180, 0.35);
+            animation: fadeIn 2s ease forwards;
+            transform: translateY(30px); opacity: 0;
+            max-width: 600px; width: 90%;
+        }
+        @keyframes fadeIn { to { transform: translateY(0); opacity: 1; } }
+
+        /* PHOTO FRAME */
+        .photo-frame {
+            width: 180px; height: 180px; margin: 0 auto 20px;
+            border-radius: 50%; border: 4px solid #6ab7ff;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 25px rgba(106, 183, 255, 0.5);
+            overflow: hidden; position: relative;
+        }
+        .photo-frame img {
+            width: 100%; height: 100%; object-fit: cover;
+            position: absolute; top: 0; left: 0;
+            opacity: 0; transition: opacity 1s ease-in-out;
+            border-radius: 50%;
+        }
+        .photo-frame img.active { opacity: 1; }
+
+        h1 {
+            color: #e0f0ff; font-size: 2rem; margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(100, 180, 255, 0.6);
+        }
+        .subtext {
+            color: #b8d8ff; font-size: 1.15rem;
+            line-height: 1.8; margin-bottom: 30px;
+        }
+        .name { color: #90c8ff; font-weight: bold; }
+        .buttons { display: flex; gap: 25px; justify-content: center; flex-wrap: wrap; }
+
+        button {
+            padding: 14px 36px; font-size: 1.1rem; border: none;
+            border-radius: 50px; cursor: pointer; transition: all 0.3s ease; font-weight: 600;
+        }
+        #yesBtn {
+            background: linear-gradient(135deg, #2e8bff, #54a0ff); color: white;
+            box-shadow: 0 4px 15px rgba(50, 130, 255, 0.4);
+        }
+        #yesBtn:hover { transform: scale(1.08); box-shadow: 0 6px 20px rgba(50, 130, 255, 0.6); }
+        #noBtn { background: #e6f0ff; color: #2554a0; position: relative; }
+
+        .response {
+            margin-top: 25px; font-size: 1.4rem; color: #e0f0ff;
+            display: none; animation: popIn 0.5s ease forwards; line-height: 1.8;
+        }
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            70% { transform: scale(1.1); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .sparkle {
+            position: absolute; width: 5px; height: 5px; background: #fff;
+            border-radius: 50%; animation: sparkle 3s ease-in-out infinite;
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1.3); }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 25px 30px; }
+            h1 { font-size: 1.6rem; }
+            .subtext { font-size: 1rem; }
+            .photo-frame { width: 150px; height: 150px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="hearts"></div>
+    <div id="flowers"></div>
+    <div id="sparkles"></div>
+
+    <div class="container">
+        <div class="photo-frame">
+            <img src="baby ko.jpg" class="active" alt="Baby Ganda 1">
+            <img src="baby ko1.jpg" alt="Baby Ganda 2">
+            <img src="baby ko2.jpg" alt="Baby Ganda 3">
+        </div>
+
+        <h1>Hi <span class="name">Baby Ganda</span> 💙</h1>
+
+        <p class="subtext">
+            You are the only one I will love for the rest of my life.<br>
+            I hope we stay together forever, Baby Ganda.<br>
+            I love you so much 💙
+        </p>
+
+        <div class="buttons">
+            <button id="yesBtn">I love you too 💙</button>
+            <button id="noBtn">No 😔</button>
+        </div>
+
+        <div class="response" id="response"></div>
+    </div>
+
+    <script>
+        // Hearts
+        const heartsContainer = document.getElementById('hearts');
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            const size = Math.random() * 18 + 14;
+            heart.style.width = size + 'px';
+            heart.style.height = size + 'px';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            heartsContainer.appendChild(heart);
+            setTimeout(() => heart.remove(), 8000);
+        }
+        setInterval(createHeart, 600);
+
+        // Flowers
+        const flowersContainer = document.getElementById('flowers');
+        const flowerTypes = ['rose', 'hydrangea', 'cornflower', 'forget', 'bell'];
+
+        function createFlower() {
+            const type = flowerTypes[Math.floor(Math.random() * flowerTypes.length)];
+            const flower = document.createElement('div');
+            flower.classList.add('flower', type);
+
+            if (type === 'rose') {
+                flower.innerHTML = `
+                    <div class="petal p1"></div>
+                    <div class="petal p2"></div>
+                    <div class="petal p3"></div>
+                    <div class="petal p4"></div>
+                    <div class="petal p5"></div>
+                    <div class="center"></div>`;
+            } else if (type === 'hydrangea') {
+                flower.innerHTML = `
+                    <div class="petal p1"></div>
+                    <div class="petal p2"></div>
+                    <div class="petal p3"></div>
+                    <div class="petal p4"></div>
+                    <div class="petal p5"></div>`;
+            } else if (type === 'cornflower') {
+                flower.innerHTML = `
+                    <div class="petal p1"></div>
+                    <div class="petal p2"></div>
+                    <div class="petal p3"></div>
+                    <div class="petal p4"></div>
+                    <div class="petal p5"></div>
+                    <div class="petal p6"></div>
+                    <div class="petal p7"></div>
+                    <div class="petal p8"></div>
+                    <div class="center"></div>`;
+            } else if (type === 'forget') {
+                flower.innerHTML = `
+                    <div class="petal p1"></div>
+                    <div class="petal p2"></div>
+                    <div class="petal p3"></div>
+                    <div class="petal p4"></div>
+                    <div class="petal p5"></div>
+                    <div class="center"></div>`;
+            } else if (type === 'bell') {
+                flower.innerHTML = `
+                    <div class="bloom"></div>
+                    <div class="stem"></div>`;
+            }
+
+            const scale = Math.random() * 0.4 + 0.8;
+            flower.style.transform = `scale(${scale})`;
+            flower.style.left = Math.random() * 100 + 'vw';
+            flower.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            flowersContainer.appendChild(flower);
+            setTimeout(() => flower.remove(), 11000);
+        }
+        setInterval(createFlower, 500);
+
+        // Sparkles
+        const sparklesContainer = document.getElementById('sparkles');
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.left = Math.random() * 100 + 'vw';
+            sparkle.style.top = Math.random() * 100 + 'vh';
+            sparkle.style.animationDelay = Math.random() * 3 + 's';
+            sparklesContainer.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 3000);
+        }
+        setInterval(createSparkle, 400);
+
+        // Photo Slideshow
+        const photos = document.querySelectorAll('.photo-frame img');
+        let currentPhoto = 0;
+        setInterval(() => {
+            photos[currentPhoto].classList.remove('active');
+            currentPhoto = (currentPhoto + 1) % photos.length;
+            photos[currentPhoto].classList.add('active');
+        }, 3000);
+
+        // Buttons
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const response = document.getElementById('response');
+        let noCount = 0;
+
+        yesBtn.addEventListener('click', () => {
+            response.style.display = 'block';
+            response.innerHTML = `You are my one and only too 💙 I promise to love you forever and stay with you always.<br>We will last a lifetime together, Baby Ganda.<br>I love you so much! 🌸✨`;
+            for(let i = 0; i < 40; i++) setTimeout(createHeart, i * 80);
+            for(let i = 0; i < 35; i++) setTimeout(createFlower, i * 70);
+        });
+
+        const noMessages = [
+            "Are you sure? 🥺💙",
+            "Please say yes... 😢💙",
+            "Don't break my heart! 💔💙",
+            "I love you so much... 😭💙",
+            "Baby Ganda please? 🙏💙",
+            "Think again? 🥺✨💙",
+            "You are my only love! 💙🌸💙"
+        ];
+
+        noBtn.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - 150);
+            const y = Math.random() * (window.innerHeight - 100);
+            noBtn.style.position = 'fixed';
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
+            noBtn.style.transition = 'all 0.2s ease';
+            noBtn.innerText = noMessages[noCount % noMessages.length];
+            noCount++;
+            noBtn.style.transform = `scale(${Math.max(1 - noCount * 0.08, 0.3)})`;
+            yesBtn.style.transform = `scale(${1 + noCount * 0.05})`;
+        });
+    </script>
+</body>
+</html>
